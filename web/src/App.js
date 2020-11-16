@@ -19,8 +19,7 @@ function App() {
 	    techs: ["Node.js ", "React.js"]
     });
 
-    const repository = response.data;
-    setRepositories([...repositories, repository]);
+    setRepositories([...repositories]);
   }
 
   async function handleRemoveRepository(id) {
