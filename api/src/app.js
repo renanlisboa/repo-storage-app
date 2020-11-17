@@ -4,7 +4,7 @@ const { v4: uuid, validate: isUuid } = require('uuid');
 
 const app = express();
 
-// GLOBAL MIDDLEWARES
+// MIDDLEWARES
 app.use(express.json());
 app.use(cors());
 
@@ -16,7 +16,7 @@ function validateRepoId(req, res, next) {
   const { id } = req.params;
 
   if(!isUuid(id)) {
-    return res.status(400).json({ error: 'Invalide repository ID.' });
+    return res.status(400).json({ error: 'Invalid repository ID.' });
   }
 
   return next();
